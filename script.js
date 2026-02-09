@@ -15,23 +15,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Click Envelope
     envelope.addEventListener("click", () => {
-        envelope.style.display = "none";
-        letter.style.display = "flex";
+    envelope.style.display = "none";
+    letter.style.display = "flex";
 
-        // play music when envelope opens
-        music.play().catch((err) => {
-            console.log("Audio play failed:", err);
-        });
-
-        setTimeout(() => {
-            document.querySelector(".letter-window").classList.add("open");
-        }, 50);
+    music.play().catch((err) => {
+        console.log("Audio play failed:", err);
     });
+
+    setTimeout(() => {
+        document.querySelector(".letter-window").classList.add("open");
+    }, 50);
+});
 
     // Logic to move the NO btn
     noBtn.addEventListener("mouseover", () => {
-        const min = 200;
-        const max = 200;
+        const distance = 200;
 
         const distance = Math.random() * (max - min) + min;
         const angle = Math.random() * Math.PI * 2;
