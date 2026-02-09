@@ -29,17 +29,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Logic to move the NO btn
     noBtn.addEventListener("mouseover", () => {
-        const distance = 200;
+    const moveDistance = 200;
+    const angle = Math.random() * Math.PI * 2;
 
-        const distance = Math.random() * (max - min) + min;
-        const angle = Math.random() * Math.PI * 2;
+    const moveX = Math.cos(angle) * moveDistance;
+    const moveY = Math.sin(angle) * moveDistance;
 
-        const moveX = Math.cos(angle) * distance;
-        const moveY = Math.sin(angle) * distance;
-
-        noBtn.style.transition = "transform 0.3s ease";
-        noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
-    });
+    noBtn.style.transition = "transform 0.3s ease";
+    noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
 
     // YES is clicked
     yesBtn.addEventListener("click", () => {
