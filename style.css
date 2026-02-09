@@ -137,9 +137,40 @@ display: inline-block;
     background-color: rgba(255,240,240,0.5);
     border-radius: 12px;
 }
+/* Split layout inside the letter */
+.letter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.text-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .couple-photo {
-    width: 160px;
-    border-radius: 15px;
-    margin: 8px 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 220px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When letter opens, photo fades in */
+.letter-window.open .couple-photo {
+    opacity: 1;
+    transform: translateY(0);
 }
