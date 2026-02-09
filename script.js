@@ -70,3 +70,11 @@ yesBtn.addEventListener("click", () => {
 
     finalText.style.display = "block";
 });
+const envelope = document.getElementById("envelope");
+const music = document.getElementById("bg-music");
+
+envelope.addEventListener("click", () => {
+  music.play().catch((err) => {
+    console.log("Audio play failed:", err);
+  });
+});
